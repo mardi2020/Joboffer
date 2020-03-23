@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Job Search</title>
+    <style>
+        section {
+          display:grid;
+          gap:20px;
+          grid-template-columns: repeat(4, 1fr);
+        }
+    </style>
+  </head>
+  <body>
+    <h1>검색 결과</h1>
+    <h3>{{searchingBy}}에 대한 정보 {{resultsNumber}}개를 찾았습니다</h3>
+    <a href="/export?word={{searchingBy}}">csv파일로 내보내기</a>
+    <section>
+      <h4>직무</h4>
+      <h4>회사명</h4>
+      <h4>회사 주소</h4>
+      <h4>링크</h4>
+      {% for job in jobs %}
+        <span>{{job.title}}</span>
+        <span>{{job.company}}</span>
+        <span>{{job.location}}</span>
+        <a href="{{job.link}}" target="_blank">지원하기</a>
+      {% endfor %}
+    <section>
+  </body>
+</html>
