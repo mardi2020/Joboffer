@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
-
 def extractSOPage(URL):
     result = requests.get(URL)
     soup = BeautifulSoup(result.text, "html.parser")
